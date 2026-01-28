@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>ساخت اشتراک</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0f172a;
+    font-family: Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.box {
+    width: 380px;
+    background: #020617;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,0,0,.6);
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+input {
+    background: #020617;
+    color: #fff;
+    border: 1px solid #1e293b;
+}
+
+button {
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.plans {
+    display: none;
+    margin-top: 15px;
+}
+
+.plan {
+    border: 1px solid #1e293b;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 12px;
+    background: #020617;
+}
+
+.link {
+    margin-top: 8px;
+    background: #020617;
+    color: #38bdf8;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    word-break: break-all;
+    text-align: left;
+    white-space: pre-line;
+}
+
+.copy {
+    margin-top: 8px;
+    background: #16a34a;
+}
+
+.copy:hover {
+    background: #15803d;
+}
+
+.msg {
+    font-size: 12px;
+    color: #22c55e;
+    margin-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>ورود</h3>
+    <input type="text" placeholder="نام کاربری">
+    <input type="password" placeholder="رمز عبور">
+    <button onclick="showPlans()">ساخت اشتراک</button>
+
+    <div class="plans" id="plans">
+        <h4>انتخاب پلن</h4>
+
+        <!-- 100 GB -->
+        <div class="plan">
+            <b>پلن 100 گیگ</b>
+            <div class="link" id="link1">
+vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vp2.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad123
+
+vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vip.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad3312
+
+vless://9c6e35f8-da44-47d4-9108-f64f385a159f@NEW.CDN.TORPROSPEED.IR:2087?path=%2F&security=tls&encryption=none&host=iddyirdyi.xuiprospeed.ir&type=ws&sni=iddyirdyi.xuiprospeed.ir#🇩🇪 𓏺اینستا و یوتوب
+            </div>
+            <button class="copy" onclick="copyText('link1','msg1')">کپی کانفیگ‌ها</button>
+            <div class="msg" id="msg1"></div>
+        </div>
+
+        <!-- 200 GB -->
+        <div class="plan">
+            <b>پلن 200 گیگ</b>
+            <div class="link" id="link2">
+vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vp2.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad123
+
+vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vip.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad3312
+
+vless://9c6e35f8-da44-47d4-9108-f64f385a159f@NEW.CDN.TORPROSPEED.IR:2087?path=%2F&security=tls&encryption=none&host=iddyirdyi.xuiprospeed.ir&type=ws&sni=iddyirdyi.xuiprospeed.ir#🇩🇪 𓏺اینستا و یوتوب
+            </div>
+            <button class="copy" onclick="copyText('link2','msg2')">کپی کانفیگ‌ها</button>
+            <div class="msg" id="msg2"></div>
+        </div>
+
+        <!-- Unlimited -->
+        <div class="plan">
+            <b>پلن نامحدود</b>
+            <div class="link" id="link3">
+vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vp2.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad123
+
+vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vip.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad3312
+
+vless://9c6e35f8-da44-47d4-9108-f64f385a159f@NEW.CDN.TORPROSPEED.IR:2087?path=%2F&security=tls&encryption=none&host=iddyirdyi.xuiprospeed.ir&type=ws&sni=iddyirdyi.xuiprospeed.ir#🇩🇪 𓏺اینستا و یوتوب
+            </div>
+            <button class="copy" onclick="copyText('link3','msg3')">کپی کانفیگ‌ها</button>
+            <div class="msg" id="msg3"></div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function showPlans() {
+    document.getElementById("plans").style.display = "block";
+}
+
+function copyText(linkId, msgId) {
+    const text = document.getElementById(linkId).innerText.trim();
+    navigator.clipboard.writeText(text).then(() => {
+        document.getElementById(msgId).innerText = "کپی شد ✅";
+        setTimeout(() => {
+            document.getElementById(msgId).innerText = "";
+        }, 2000);
+    });
+}
+</script>
+
+</body>
+</html>
