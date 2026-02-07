@@ -1,167 +1,132 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ساخت اشتراک</title>
+<title>Red Tabchi Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
 body {
-    margin: 0;
-    height: 100vh;
-    background: #0f172a;
-    font-family: Tahoma, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #2b0000, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+.container {
+  background: rgba(0,0,0,0.75);
+  border: 2px solid #ff1e1e;
+  box-shadow: 0 0 40px #ff1e1e;
+  border-radius: 22px;
+  padding: 45px 55px;
+  text-align: center;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px #ff1e1e; }
+  to   { box-shadow: 0 0 55px #ff4d4d; }
+}
+
+.title {
+  font-size: 34px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+  color: #ff4d4d;
 }
 
 .box {
-    width: 380px;
-    background: #020617;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(0,0,0,.6);
-    text-align: center;
+  margin-top: 25px;
 }
 
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: none;
-    font-size: 14px;
+.label {
+  font-size: 14px;
+  opacity: 0.75;
+  letter-spacing: 1px;
 }
 
-input {
-    background: #020617;
-    color: #fff;
-    border: 1px solid #1e293b;
+.counter {
+  margin-top: 10px;
+  font-size: 48px;
+  text-shadow: 0 0 15px currentColor;
 }
 
-button {
-    background: #2563eb;
-    color: #fff;
-    cursor: pointer;
+.pulse {
+  animation: pulse 1.2s infinite;
 }
 
-button:hover {
-    background: #1d4ed8;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
-.plans {
-    display: none;
-    margin-top: 15px;
+.buy {
+  font-size: 38px;
+  margin-top: 5px;
+  animation: colorShift 3s linear infinite;
 }
 
-.plan {
-    border: 1px solid #1e293b;
-    padding: 12px;
-    border-radius: 10px;
-    margin-top: 12px;
-    background: #020617;
-}
-
-.link {
-    margin-top: 8px;
-    background: #020617;
-    color: #38bdf8;
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    word-break: break-all;
-    text-align: left;
-    white-space: pre-line;
-}
-
-.copy {
-    margin-top: 8px;
-    background: #16a34a;
-}
-
-.copy:hover {
-    background: #15803d;
-}
-
-.msg {
-    font-size: 12px;
-    color: #22c55e;
-    margin-top: 5px;
+@keyframes colorShift {
+  0%   { color: #00ffcc; }
+  25%  { color: #00aaff; }
+  50%  { color: #ff00ff; }
+  75%  { color: #ff9900; }
+  100% { color: #00ffcc; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-    <h3>ورود</h3>
-    <input type="text" placeholder="نام کاربری">
-    <input type="password" placeholder="رمز عبور">
-    <button onclick="showPlans()">ساخت اشتراک</button>
+<div class="container">
+  <div class="title">RED TABCHI</div>
 
-    <div class="plans" id="plans">
-        <h4>انتخاب پلن</h4>
+  <div class="box">
+    <div class="label">ONLINE PLAYERS</div>
+    <div id="online" class="counter pulse" style="color:#00ffcc;">----</div>
+  </div>
 
-        <!-- 100 GB -->
-        <div class="plan">
-            <b>پلن 100 گیگ</b>
-            <div class="link" id="link1">
-vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vp2.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad123
-
-vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vip.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad3312
-
-vless://9c6e35f8-da44-47d4-9108-f64f385a159f@NEW.CDN.TORPROSPEED.IR:2087?path=%2F&security=tls&encryption=none&host=iddyirdyi.xuiprospeed.ir&type=ws&sni=iddyirdyi.xuiprospeed.ir#🇩🇪 𓏺اینستا و یوتوب
-            </div>
-            <button class="copy" onclick="copyText('link1','msg1')">کپی کانفیگ‌ها</button>
-            <div class="msg" id="msg1"></div>
-        </div>
-
-        <!-- 200 GB -->
-        <div class="plan">
-            <b>پلن 200 گیگ</b>
-            <div class="link" id="link2">
-vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vp2.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad123
-
-vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vip.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad3312
-
-vless://9c6e35f8-da44-47d4-9108-f64f385a159f@NEW.CDN.TORPROSPEED.IR:2087?path=%2F&security=tls&encryption=none&host=iddyirdyi.xuiprospeed.ir&type=ws&sni=iddyirdyi.xuiprospeed.ir#🇩🇪 𓏺اینستا و یوتوب
-            </div>
-            <button class="copy" onclick="copyText('link2','msg2')">کپی کانفیگ‌ها</button>
-            <div class="msg" id="msg2"></div>
-        </div>
-
-        <!-- Unlimited -->
-        <div class="plan">
-            <b>پلن نامحدود</b>
-            <div class="link" id="link3">
-vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vp2.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad123
-
-vless://47aa5f1d-c151-4dd2-97ab-c08fe2aedcd5@vip.nanaopano.com:42651?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#gscad3312
-
-vless://9c6e35f8-da44-47d4-9108-f64f385a159f@NEW.CDN.TORPROSPEED.IR:2087?path=%2F&security=tls&encryption=none&host=iddyirdyi.xuiprospeed.ir&type=ws&sni=iddyirdyi.xuiprospeed.ir#🇩🇪 𓏺اینستا و یوتوب
-            </div>
-            <button class="copy" onclick="copyText('link3','msg3')">کپی کانفیگ‌ها</button>
-            <div class="msg" id="msg3"></div>
-        </div>
-
-    </div>
+  <div class="box">
+    <div class="label">PURCHASED USERS</div>
+    <div id="buyers" class="counter buy">----</div>
+  </div>
 </div>
 
 <script>
-function showPlans() {
-    document.getElementById("plans").style.display = "block";
+let online = Math.floor(Math.random() * 4000) + 3000;
+let buyers = Math.floor(online * 0.35);
+
+function updateStats() {
+  // آنلاین
+  let onlineChange = Math.floor(Math.random() * 300) - 150;
+  online += onlineChange;
+
+  if (online < 1500) online = 1500;
+  if (online > 10000) online = 10000;
+
+  // خریدار (آهسته‌تر و منطقی)
+  let buyChance = Math.random();
+  if (buyChance > 0.6) {
+    buyers += Math.floor(Math.random() * 5);
+  }
+
+  if (buyers > online * 0.8) {
+    buyers = Math.floor(online * 0.8);
+  }
+
+  document.getElementById("online").innerText = online.toLocaleString();
+  document.getElementById("buyers").innerText = buyers.toLocaleString();
 }
 
-function copyText(linkId, msgId) {
-    const text = document.getElementById(linkId).innerText.trim();
-    navigator.clipboard.writeText(text).then(() => {
-        document.getElementById(msgId).innerText = "کپی شد ✅";
-        setTimeout(() => {
-            document.getElementById(msgId).innerText = "";
-        }, 2000);
-    });
-}
+setInterval(updateStats, Math.random() * 2000 + 2500);
+updateStats();
 </script>
 
 </body>
